@@ -21,7 +21,7 @@ def move_to_trash(file_path):
     if disk == 'Users':
         if os.path.exists(local_trash):
             print os.path.exists(file_path), os.path.exists(local_trash)
-            subprocess.call('mv {} {}'.format(file_path, local_trash), shell=True)
+            subprocess.call('mv "{}" "{}"'.format(file_path, local_trash), shell=True)
         else:
             print 'ERROR: Can not find Trash'
     elif disk == 'Volumes':
@@ -30,14 +30,14 @@ def move_to_trash(file_path):
         if os.path.exists(volume_trash):
             users_volume_trash = os.path.join(volume_trash, str(uid))
             if os.path.exists(users_volume_trash):
-                subprocess.call('mv {} {}'.format(file_path, users_volume_trash), shell=True)
+                subprocess.call('mv "{}" "{}"'.format(file_path, users_volume_trash), shell=True)
             else:
                 os.mkdir(users_volume_trash)
-                subprocess.call('mv {} {}'.format(file_path, users_volume_trash), shell=True)
+                subprocess.call('mv "{}" "{}"'.format(file_path, users_volume_trash), shell=True)
         elif os.path.exists(local_trash):
-            subprocess.call('mv {} {}'.format(file_path, local_trash), shell=True)
+            subprocess.call('mv "{}" "{}"'.format(file_path, local_trash), shell=True)
         else:
             print 'ERROR: Can not find Trash'
-        subprocess.call('mv {} {}'.format(file_path, local_trash), shell=True)
+        subprocess.call('mv "{}" "{}"'.format(file_path, local_trash), shell=True)
     else:
         print 'No idea whats happening...'
