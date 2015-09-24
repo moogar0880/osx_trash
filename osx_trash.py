@@ -188,7 +188,9 @@ def parse_arguments():
     parser.add_argument('--version', action='store_true',
                         default=False, help='Print version info and exit')
     parser.add_argument('src', nargs='*',
-                        help='A list of the files to move to the Trash.')
+                        help=('A list of files and directories to move to the '
+                              'Trash. Relative and absolute paths are both '
+                              'fine.'))
     return parser.parse_args()
 
 

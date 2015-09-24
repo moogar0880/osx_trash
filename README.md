@@ -10,7 +10,8 @@ The `osx_trash` package exposes a cli utility called `trash`.
 usage: trash [-h] [-v] [--version] [src [src ...]]
 
 positional arguments:
-  src            A list of the files to move to the Trash.
+  src            A list of files and directories to move to the Trash.
+                 Relative and absolute paths are both fine.
 
 optional arguments:
   -h, --help     show this help message and exit
